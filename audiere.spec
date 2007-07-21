@@ -11,6 +11,7 @@ URL:		http://audiere.sourceforge.net/
 BuildRequires:	flac-devel
 BuildRequires:	libogg-devel
 BuildRequires:	libvorbis-devel
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The Audiere Audio System is a portable audio library which supports
