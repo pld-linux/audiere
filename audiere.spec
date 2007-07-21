@@ -72,10 +72,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc doc/*.txt
 %attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_libdir}/libaudiere-%{version}.so
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libaudiere-%{version}.so
+%attr(755,root,root) %{_libdir}/libaudiere.so
 %{_libdir}/libaudiere.la
 %{_includedir}/audiere.h
 
