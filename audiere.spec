@@ -22,15 +22,15 @@ DirectSound 3, DirectSound 8, and arbitrary DLLs for output in
 Windows, and OSS in Linux.
 
 %description -l pl.UTF-8
-Audiere Audio System jest przenośną biblioteką wspierającą
+Audiere Audio System jest przenośną biblioteką obsługującą
 odtwarzanie plików MP3, Ogg Vorbis, WAV, IT, XM, S3M oraz MOD. Można
-jej używać za pomocą C, C++, Pythona, Javy oraz innych języków
-wspierających XPCOM (jak na przykład JavaScript w Mozilli).
-Biblioteka wspiera obecnie DirectSound 3, DirectSound 8 jak również
-arbitralne biblioteki DLLs dla Windowsa oraz OSS dla Linuxa.
+jej używać z poziomu C, C++, Pythona, Javy oraz innych języków
+obsługujących XPCOM (jak na przykład JavaScript w Mozilli).
+Biblioteka jako wyjście obsługuje obecnie DirectSound 3, DirectSound 8
+jak również dowolne biblioteki DLL dla Windows oraz OSS pod Linuksem.
 
 %package devel
-Summary:	Header files for FOO library
+Summary:	Header files for audiere library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki audiere
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
@@ -83,4 +83,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libaudiere.a
