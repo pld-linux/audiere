@@ -3,14 +3,21 @@ Summary(pl.UTF-8):	Przenośna biblioteka audio
 Name:		audiere
 Version:	1.9.4
 Release:	1
-License:	GPL v2.1+
+License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/audiere/%{name}-%{version}.tar.gz
 # Source0-md5:	b95dfe6f1e69cfd12371747f22772766
 URL:		http://audiere.sourceforge.net/
-BuildRequires:	flac-devel
+# should be shared to avoid PIC issue
+#BuildRequires:	dumb-devel
+#BuildRequires:	flac-devel < 1.1.3
+BuildRequires:	libcdaudio-devel
 BuildRequires:	libogg-devel
+BuildRequires:	libstdc++-devel
 BuildRequires:	libvorbis-devel
+# needs fix (-I, invalid conversion)
+#BuildRequires:	speex-devel
+#BR: wxWidgets for example player (needs passing WX_CONFIG)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -34,6 +41,10 @@ Summary:	Header files for audiere library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki audiere
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	libcdaudio-devel
+Requires:	libogg-devel
+Requires:	libstdc++-devel
+Requires:	libvorbis-devel
 
 %description devel
 Header files for audiere library.
@@ -72,11 +83,11 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc doc/*.txt
-%attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/libaudiere-%{version}.so
 
 %files devel
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/audiere-config
 %attr(755,root,root) %{_libdir}/libaudiere.so
 %{_libdir}/libaudiere.la
 %{_includedir}/audiere.h
