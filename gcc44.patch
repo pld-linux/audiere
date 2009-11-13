@@ -1,0 +1,30 @@
+--- audiere-1.9.4/src/audiere.h~	2006-02-14 06:57:01.000000000 +0200
++++ audiere-1.9.4/src/audiere.h	2009-11-13 13:27:45.906478378 +0200
+@@ -28,6 +28,7 @@
+ 
+ #include <vector>
+ #include <string>
++#include <string.h>
+ 
+ #ifdef _MSC_VER
+ #pragma warning(disable : 4786)
+--- audiere-1.9.4/src/debug.cpp~	2006-02-14 06:57:01.000000000 +0200
++++ audiere-1.9.4/src/debug.cpp	2009-11-13 13:29:22.888687932 +0200
+@@ -1,6 +1,7 @@
+ #ifdef WIN32
+   #include <windows.h>
+ #endif
++#include <stdlib.h>
+ 
+ #include "debug.h"
+ 
+--- audiere-1.9.4/src/utility.cpp~	2006-02-14 06:57:01.000000000 +0200
++++ audiere-1.9.4/src/utility.cpp	2009-11-13 13:30:32.135628668 +0200
+@@ -4,6 +4,7 @@
+ 
+ 
+ #include <ctype.h>
++#include <stdio.h>
+ #include "utility.h"
+ #include "internal.h"
+ 
