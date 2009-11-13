@@ -2,11 +2,12 @@ Summary:	Portable audio library
 Summary(pl.UTF-8):	Przenośna biblioteka audio
 Name:		audiere
 Version:	1.9.4
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/audiere/%{name}-%{version}.tar.gz
 # Source0-md5:	b95dfe6f1e69cfd12371747f22772766
+Patch0:		gcc44.patch
 URL:		http://audiere.sourceforge.net/
 # should be shared to avoid PIC issue
 #BuildRequires:	dumb-devel
@@ -29,12 +30,12 @@ DirectSound 3, DirectSound 8, and arbitrary DLLs for output in
 Windows, and OSS in Linux.
 
 %description -l pl.UTF-8
-Audiere Audio System jest przenośną biblioteką obsługującą
-odtwarzanie plików MP3, Ogg Vorbis, WAV, IT, XM, S3M oraz MOD. Można
-jej używać z poziomu C, C++, Pythona, Javy oraz innych języków
-obsługujących XPCOM (jak na przykład JavaScript w Mozilli).
-Biblioteka jako wyjście obsługuje obecnie DirectSound 3, DirectSound 8
-jak również dowolne biblioteki DLL dla Windows oraz OSS pod Linuksem.
+Audiere Audio System jest przenośną biblioteką obsługującą odtwarzanie
+plików MP3, Ogg Vorbis, WAV, IT, XM, S3M oraz MOD. Można jej używać z
+poziomu C, C++, Pythona, Javy oraz innych języków obsługujących XPCOM
+(jak na przykład JavaScript w Mozilli). Biblioteka jako wyjście
+obsługuje obecnie DirectSound 3, DirectSound 8 jak również dowolne
+biblioteki DLL dla Windows oraz OSS pod Linuksem.
 
 %package devel
 Summary:	Header files for audiere library
@@ -66,6 +67,7 @@ Statyczna biblioteka audiere.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure
