@@ -2,7 +2,7 @@ Summary:	Portable audio library
 Summary(pl.UTF-8):	Przenośna biblioteka audio
 Name:		audiere
 Version:	1.9.4
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		Libraries
 Source0:	http://dl.sourceforge.net/audiere/%{name}-%{version}.tar.gz
